@@ -7,7 +7,8 @@ Progress, zh0 fs18, Säkerställer anslutning till nätverksmappar.,,Information
 DriveGet, DrivesList, list, NETWORK
 for k, v in StrSplit(DrivesList)
 {
-    Run, %v%:\
-	Sleep, 1000
-	WinClose, A
+	Run, %v%:\
+	SetTitleMatchMode, 2
+	WinWaitActive, (%v%:)
+	WinClose, (%v%:)
 }
